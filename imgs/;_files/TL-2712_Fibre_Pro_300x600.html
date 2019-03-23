@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(1276)https://acs.adgear.com/clients/telus/5309/TL-2712_Fibre_Collaboration_300x600/TL-2712_Fibre_Pro_300x600.html?adserver=adgear&instance_string=66957a90-66c7-11e7-b9e7-0cc47a6f1d04&clickTAG=https%3A%2F%2Fgoogleads.g.doubleclick.net%2Fdbm%2Fclk%3Fsa%3DL%26ai%3DCJfAB-bplWeutKcvOpgOlkq7gAqDs3rNKmNyTkJgFpsXZ69QIEAEgso-0IWD9mPuAzAOgAeyG7c4DyAEJqQLiFPOt_v6pPqgDAaoE0wFP0F_iTUYOcKGvWD0RfLE1hpW4rkFg3IfOeCuNeg27d_fC5I2pRPMObQt6O6JNg5u9zMj027dkFXYlOXZMdF6bOa-G_WngVqecWnJM_9Sb00dTzsu0LV0Wtm8wuNjp_Wc3LO0LmIarlu-4maRNGgs1ftsAF726C4ivRV33Uyu4Topji0wVfNsAIuXAhMNf4mXqmjyIa8XE6yaXJEMpjtyza2ENxyxnysnO4t2nGQ8VAKxGPMs8owea1R3xh3PP3dia84esfcZM82DQA1aCEoGn04JH4AQDoAZNgAf8-JIxqAemvhvYBwDSCAUIgAEQAcgT25yTAtATANgTAw%26num%3D1%26sig%3DAOD64_01Kd7GLqjK12AgUDEVNXpOvWGqnA%26client%3Dca-pub-9465609616171866%26dbm_c%3DAKAmf-CNujb7r4ZqIRl12c2QJEG1RPElrkthjFf-ic3XY1d2KMe1aXGqpZ_mBJZDg1ISMUOSxV1J%26dbm_d%3DAKAmf-DtVQR_SzTbyjGvAHt_MoSVVa6EwhpX8jfCBWx-QBSoXyqnySvxg_x_SH4xGTIJM3rS3y6ZC6co43RWBDEdq8-acHDYjsk7KWxAoH4zqi-U0t7x5I_YQdHba57qPJn4m8sHgLXqQ9c8NLqzKiELbCiBHXYfPEmvcT4DMQSSxzAr9iQntDinTAX4UIIQNFbsff8LGe-BlOtEOXHgVuTEKvREMnfQtQ%26adurl%3Dhttps%3A%2F%2Fdcs.adgear.com%2Fclicks%2Fext%2Fb%3DVFhOPTY2OTU3YTkwLTY2YzctMTFlNy1iOWU3LTBjYzQ3YTZmMWQwNA**%2Fp%3D1707868%2Fa%3D99640%2Fc%3D111613%3FAG_RED%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>TL-2712_Fibre_Pro_300x600</title>
+<!-- AdGear HTML5 JS API -->
+<script type="text/javascript" src="./html5.min.js"></script>
+<!-- write your code here -->
+<script src="./createjs-2015.11.26.min.js"></script>
+<script src="./TL-2712_Fibre_Pro_300x600.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("B7D296B4B806466FB3255D44ABC8FE59");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.TL2712_Fibre_Pro_300x600();
+	stage = new lib.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;" marginwidth="0" marginheight="0">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:300px; height:600px">
+		<canvas id="canvas" width="600" height="1200" style="position: absolute; display: block; background-color: rgb(255, 255, 255); width: 300px; height: 600px; cursor: pointer;"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:300px; height:600px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+
+</body></html>
